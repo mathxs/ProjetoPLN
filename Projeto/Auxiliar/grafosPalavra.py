@@ -39,6 +39,7 @@ class grafosPalavra:
         txtGraph += "\n}"
 
         print(txtGraph)
+        print("Colocar a saída acima no site: http://graphs.grevian.org/graph/")
         print ( "\nQuantidade de palavras: {}".format(len(Words)) )   
         print ( "Quantidade de arestas : {}".format(len(Edges)) )   
 
