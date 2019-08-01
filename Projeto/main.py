@@ -10,8 +10,24 @@ import sys
 print(sys.version)
 print(sys.executable+"\n")
 
-#rodando o grafico de palavras para o arquivo de teste
+#O grafico de palavra
 from Auxiliar.grafosPalavra import grafosPalavra
 teste = grafosPalavra('Arquivos/teste.txt',30)
 
+#nltk
+from Auxiliar.aux_NLTK import aux_NLTK
+func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
+
+#ppmi
+from Auxiliar.aux_PPMI import aux_PPMI
+func_PPMI = aux_PPMI('Arquivos/teste.txt')
+
+#naiveBayes
+from Auxiliar.NBClassifier import NBClassifier
+NBC = NBClassifier('Arquivos/teste.txt')
+NBC.train()
+
+while True:
+    phrase = input("\nDigite uma frase: ")
+    print("Resposta: {}".format( NBC.test(phrase)) )
 #print("Testando Ambiente Virtual e Compilador") 

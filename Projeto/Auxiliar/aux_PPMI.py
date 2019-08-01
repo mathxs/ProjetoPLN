@@ -1,29 +1,22 @@
 # coding=utf8
-import sys
 import re
 import os
 import numpy
 import math
 import matplotlib.pyplot as plt
 
-regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+" 
+class aux_PPMI:
 
-M = 300
-
-def hashF(word):
-    k = 0
-    for i in range(0, len(word)):
-        k += (17**i) * ord(word[i])
-    return k%M
-
-if __name__ == '__main__':
-    dirDB = sys.argv[1]
+    def __init__(self,dirDB):
     
+    regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+" 
+    M = 300
+
     Document   = dict([])
     Vocabulary = set([])
 
     # leitura das stopwords
-    Stopwords       = set([]) 
+    Stopwords = set([]) 
     for s in open("stopwords-pt.txt",'r').readlines():
         Stopwords.add(s.strip().lower())
 
@@ -37,7 +30,6 @@ if __name__ == '__main__':
             if w not in Stopwords and len(w)>=3:
                 Document[fileName].append(w)
         Vocabulary.update( Document[fileName] )
-
 
     D = len(Document)
     V = len(Vocabulary)
@@ -83,4 +75,8 @@ if __name__ == '__main__':
     plt.imshow(Mcontext[:,:], cmap=plt.cm.gray, interpolation='none')
     plt.show()
 
-
+def hashF(word):
+    k = 0
+    for i in range(0, len(word)):
+        k += (17**i) * ord(word[i])
+    return k%M

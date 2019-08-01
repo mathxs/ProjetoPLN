@@ -67,15 +67,3 @@ class NBClassifier:
 
         return max(s, key=s.get)
 
-
-        
-if __name__ == '__main__':
-    fileName = sys.argv[1]
-
-    NBC = NBClassifier(fileName)
-    NBC.train()
-
-    while True:
-        phrase = input("\nDigite uma frase: ")
-        print("Resposta: {}".format( NBC.test(phrase)) )
-

@@ -1,15 +1,13 @@
 #!/usr/bin/env python
-import sys
+
 import re
 from nltk import word_tokenize, pos_tag, ne_chunk
 
+class aux_NLTK:
 
-regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,!?;]"
+    def __init__(self,sentence):
 
-if __name__ == '__main__':
-    
-    sentence = "Mark and John are working at Google."
-    #sentence = "Carlos and Maria are students of the Federal University of ABC"
+    regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,!?;]"
 
     print ( word_tokenize(sentence) )
 
