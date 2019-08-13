@@ -24,7 +24,7 @@ func_PPMI = aux_PPMI('Arquivos/Base/noticias/')
 
 #naiveBayes
 from Auxiliar.NBClassifier import NBClassifier
-NBC = NBClassifier('Arquivos/teste.txt')
+NBC = NBClassifier('Arquivos/disciplinas.csv')
 NBC.train()
 
 while True:

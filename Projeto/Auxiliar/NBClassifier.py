@@ -22,8 +22,9 @@ class NBClassifier:
         training_document = open(training_file,'r')
 
         for line in training_document.readlines():
-            c, d = tuple(line.strip().split("\t"))
-            self.Data.append((c,d))
+            if '\t' in line:
+                c, d = tuple(line.strip().split("\t"))
+                self.Data.append((c,d))
 
             if c not in self.Classes:
                 self.Classes[c] = 0
