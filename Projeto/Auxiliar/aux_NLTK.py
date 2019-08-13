@@ -7,10 +7,10 @@ class aux_NLTK:
 
     def __init__(self,sentence):
 
-    regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,!?;]"
+        regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,!?;]"
 
-    print ( word_tokenize(sentence) )
+        print ( word_tokenize(sentence) )
 
-    print ( pos_tag( word_tokenize(sentence) ))
+        print ( pos_tag( word_tokenize(sentence) ))
 
-    print ( ne_chunk( pos_tag( word_tokenize(sentence) )))
+        print ( ne_chunk( pos_tag( word_tokenize(sentence) )))

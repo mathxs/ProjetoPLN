@@ -20,11 +20,11 @@ func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do pr
 
 #ppmi
 from Auxiliar.aux_PPMI import aux_PPMI
-func_PPMI = aux_PPMI('Arquivos/teste.txt')
+func_PPMI = aux_PPMI('Arquivos/Base/noticias/')
 
 #naiveBayes
 from Auxiliar.NBClassifier import NBClassifier
-NBC = NBClassifier('Arquivos/teste.txt')
+NBC = NBClassifier('Arquivos/Base/noticias/')
 NBC.train()
 
 while True:
