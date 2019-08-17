@@ -10,7 +10,7 @@ class aux_NLTK:
         regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,!?;]"
 
         print ( word_tokenize(sentence) )
-
+        print("\n")
         print ( pos_tag( word_tokenize(sentence) ))
-
+        print("\n")
         print ( ne_chunk( pos_tag( word_tokenize(sentence) )))

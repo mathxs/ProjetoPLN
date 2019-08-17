@@ -12,11 +12,11 @@ print(sys.executable+"\n")
 
 #O grafico de palavra
 from Auxiliar.grafosPalavra import grafosPalavra
-teste = grafosPalavra('Arquivos/all_datasets-test_twiter.txt',2)
+#teste = grafosPalavra('Arquivos/all_datasets-test_twiter.txt',2)
 
 #nltk
 from Auxiliar.aux_NLTK import aux_NLTK
-#func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
+func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
 
 #ppmi
 from Auxiliar.aux_PPMI import aux_PPMI
@@ -25,6 +25,6 @@ from Auxiliar.aux_PPMI import aux_PPMI
 #naiveBayes
 from Auxiliar.NBClassifier import NBClassifier
 NBC = NBClassifier('Arquivos/all_datasets-train.txt')
-NBC.train()
-NBC.test_batch('Arquivos/all_datasets-test.txt')
-NBC.test_arquivo('Arquivos/all_datasets-test_twiter.txt')
+#NBC.train()
+#NBC.test_batch('Arquivos/all_datasets-test.txt')
+#NBC.test_arquivo('Arquivos/all_datasets-test_twiter.txt')

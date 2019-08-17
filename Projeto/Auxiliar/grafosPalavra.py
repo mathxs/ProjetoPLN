@@ -20,27 +20,32 @@ class grafosPalavra:
         content  = document.read()  # devolve o conteudo do arquivo
         
         #transformando o arquivo no n_grama requisitado
-        Temp_Words = re.findall(regex, content)
+        Temp_Words = re.findall(regex, content.lower())
+        Temp_frase = list([])
+        for i in Temp_Words:
+            if i not in stopwords:
+                Temp_frase.append(i)
+
         Words = list([])
-        for i in range(-n_grama, len(Temp_Words)):
+        for i in range(-n_grama, len(Temp_frase)):
             Temp_grama = ""
             for j in range(i, i + n_grama):
-                if j >= len(Temp_Words) or j < 0:
+                if j >= len(Temp_frase) or j < 0:
                     Temp_grama += " "
                 elif Temp_grama != "":
-                    Temp_grama += " " + Temp_Words[j]
+                    Temp_grama += " " + Temp_frase[j]
                 else:
-                    Temp_grama += Temp_Words[j]
-            Words.append(Temp_grama.lower())
+                    Temp_grama += Temp_frase[j]
+            Words.append(Temp_grama)
         Edges    = dict([])
 
         # contando a frequencia dos pares de palavras
         for i in range(0, len(Words)-1):
-            if Words[i] not in stopwords and Words[i+1] not in stopwords:
-                edge = (Words[i], Words[i+1])
-                if edge not in Edges:
-                    Edges[edge] = 0
-                Edges[edge] += 1
+            #if Words[i] not in stopwords and Words[i+1] not in stopwords:
+            edge = (Words[i], Words[i+1])
+            if edge not in Edges:
+                Edges[edge] = 0
+            Edges[edge] += 1
 
         #pegando o maior peso * 0.8
         weight = 0
@@ -48,7 +53,7 @@ class grafosPalavra:
             if Edges[v]>weight:
                 weight = Edges[v]
 
-        weight = weight*0.7
+        weight = weight*0.50
         # criando o grafo direcionado (digraph)
         txtGraph = "\ndigraph{"
         for v in Edges.keys():
