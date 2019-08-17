@@ -12,22 +12,19 @@ print(sys.executable+"\n")
 
 #O grafico de palavra
 from Auxiliar.grafosPalavra import grafosPalavra
-teste = grafosPalavra('Arquivos/teste.txt',30)
+#teste = grafosPalavra('Arquivos/teste.txt',30)
 
 #nltk
 from Auxiliar.aux_NLTK import aux_NLTK
-func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
+#func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
 
 #ppmi
 from Auxiliar.aux_PPMI import aux_PPMI
-func_PPMI = aux_PPMI('Arquivos/Base/noticias/')
+#func_PPMI = aux_PPMI('Arquivos/Base/noticias/')
 
 #naiveBayes
 from Auxiliar.NBClassifier import NBClassifier
-NBC = NBClassifier('Arquivos/disciplinas.csv')
+NBC = NBClassifier('Arquivos/all_datasets-train.txt')
 NBC.train()
-
-while True:
-    phrase = input("\nDigite uma frase: ")
-    print("Resposta: {}".format( NBC.test(phrase)) )
-#print("Testando Ambiente Virtual e Compilador") 
+NBC.test_batch('Arquivos/all_datasets-test.txt')
+NBC.test_arquivo('Arquivos/all_datasets-test_twiter.txt')
