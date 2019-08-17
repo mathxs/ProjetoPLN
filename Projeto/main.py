@@ -12,7 +12,7 @@ print(sys.executable+"\n")
 
 #O grafico de palavra
 from Auxiliar.grafosPalavra import grafosPalavra
-#teste = grafosPalavra('Arquivos/teste.txt',30)
+teste = grafosPalavra('Arquivos/all_datasets-test_twiter.txt',2)
 
 #nltk
 from Auxiliar.aux_NLTK import aux_NLTK

@@ -4,11 +4,10 @@ import re
 
 class grafosPalavra:
 
-    def __init__(self,caminho,peso):
+    def __init__(self,caminho,n_grama):
         
         regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ0-9]+"   # raw string
         fileName = caminho
-        weight   = int(peso)
 
         # leitura das stopwords
         stopwordsfile = open('Arquivos/stopwords.txt','r')
@@ -20,7 +19,19 @@ class grafosPalavra:
         document = open(fileName,'r')
         content  = document.read()  # devolve o conteudo do arquivo
         
-        Words    = re.findall(regex, content)
+        #transformando o arquivo no n_grama requisitado
+        Temp_Words = re.findall(regex, content)
+        Words = list([])
+        for i in range(-n_grama, len(Temp_Words)):
+            Temp_grama = ""
+            for j in range(i, i + n_grama):
+                if j >= len(Temp_Words) or j < 0:
+                    Temp_grama += " "
+                elif Temp_grama != "":
+                    Temp_grama += " " + Temp_Words[j]
+                else:
+                    Temp_grama += Temp_Words[j]
+            Words.append(Temp_grama.lower())
         Edges    = dict([])
 
         # contando a frequencia dos pares de palavras
@@ -31,6 +42,13 @@ class grafosPalavra:
                     Edges[edge] = 0
                 Edges[edge] += 1
 
+        #pegando o maior peso * 0.8
+        weight = 0
+        for v in Edges.keys():
+            if Edges[v]>weight:
+                weight = Edges[v]
+
+        weight = weight*0.7
         # criando o grafo direcionado (digraph)
         txtGraph = "\ndigraph{"
         for v in Edges.keys():
@@ -41,5 +59,5 @@ class grafosPalavra:
         print(txtGraph)
         print("Colocar a saída acima no site: http://graphs.grevian.org/graph/")
         print ( "\nQuantidade de palavras: {}".format(len(Words)) )   
-        print ( "Quantidade de arestas : {}".format(len(Edges)) )   
+        print ( "Quantidade de arestas : {} \n".format(len(Edges)) )   
 
