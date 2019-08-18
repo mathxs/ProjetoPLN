@@ -40,7 +40,7 @@ class NBClassifier:
             if '\t' in line:
                 d, c = tuple(line.strip().split("\t"))
                 if self.at_nltk:
-                    for j in word_tokenize(d):                        
+                    for j in word_tokenize(d,language='portuguese'):                        
                         d = j
                 self.Data.append((c,d))
             #print (d)

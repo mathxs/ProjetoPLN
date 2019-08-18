@@ -11,6 +11,6 @@ class aux_NLTK:
 
         print ( word_tokenize(sentence) )
         print("\n")
-        print ( pos_tag( word_tokenize(sentence) ))
+        print ( pos_tag( word_tokenize(sentence,language='portuguese')))
         print("\n")
         print ( ne_chunk( pos_tag( word_tokenize(sentence) )))

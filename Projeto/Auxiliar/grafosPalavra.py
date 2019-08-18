@@ -3,14 +3,16 @@
 import re
 from nltk import word_tokenize, pos_tag, ne_chunk
 
-at_nltk = False
+at_nltk_tokens = False
+peso = 0.50
 class grafosPalavra:
 
-    def __init__(self,caminho,n_grama,at_nltk=False):
+    def __init__(self,caminho,n_grama,peso,at_nltk=False):
         
         regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ0-9]+"   # raw string
         fileName = caminho
-        self.at_nltk = at_nltk
+        self.at_nltk_tokens = at_nltk
+        self.peso = peso
         # leitura das stopwords
         stopwordsfile = open('Arquivos/stopwords.txt','r')
         stopwords       = set([]) 
@@ -26,14 +28,16 @@ class grafosPalavra:
         Temp_frase = list([])
         for i in Temp_Words:
             if i not in stopwords:
-                if self.at_nltk:
-                    for j in word_tokenize(i):                        
-                        Temp_frase.append(j)
+                frase_atual = ""
+                if self.at_nltk_tokens:
+                    for j in word_tokenize(i,language='portuguese'):                        
+                        frase_atual = j
                         #testando = j
                         #if testando != i:
                             #print ("Diferenca {} {}".format(i,j))
                 else:
-                    Temp_frase.append(i)            
+                    frase_atual = i
+                Temp_frase.append(frase_atual)        
 
         Words = list([])
         for i in range(-n_grama, len(Temp_frase)):
@@ -65,7 +69,9 @@ class grafosPalavra:
             if Edges[v]>weight:
                 weight = Edges[v]
 
-        weight = weight * 0.50
+        weight = weight * self.peso
+        if weight < 2:
+            weight = 2
         # criando o grafo direcionado (digraph)
         txtGraph = "\ndigraph{"
         for v in Edges.keys():
