@@ -1,15 +1,18 @@
 import sys
 import re
 import math
+import re
+from nltk import word_tokenize, pos_tag, ne_chunk
 regex = r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+" 
-
+at_nltk = False
 class NBClassifier:
 
-    def __init__(self, training_file=None):
+    def __init__(self, training_file=None,at_nltk=False):
         self.Data          = []
         self.Classes       = dict([])
         self.V             = set([])
         self.bigdoc        = dict([])
+        self.at_nltk = at_nltk
 
         self.logprior      = dict([])
         self.loglikelihood = dict([])
@@ -21,7 +24,7 @@ class NBClassifier:
         text2 = ""
         prefix = ""
         for w in re.findall(r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,;!?]", text):
-            if w in ["not", "didn't", "no"]:
+            if w in ["not", "didn't", "no", "não"]:
                 prefix = "not_"
                 continue
             if w in ".,;!?":
@@ -36,8 +39,12 @@ class NBClassifier:
         for line in training_document.readlines():
             if '\t' in line:
                 d, c = tuple(line.strip().split("\t"))
+                if self.at_nltk:
+                    for j in word_tokenize(d):                        
+                        d = j
                 self.Data.append((c,d))
-
+            #print (d)
+            
             if c not in self.Classes:
                 self.Classes[c] = 0
                 self.bigdoc[c] = []
