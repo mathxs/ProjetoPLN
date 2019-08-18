@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Codigo baseado e utilizando os Scripts da aula 04 do dia 12/06 do projessor Jesus de PLN da UFabc
 # coding=utf8
 import re

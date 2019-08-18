@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Artigo referencia do trabalho de PLN
 #https://pdfs.semanticscholar.org/7867/159013a9c10661fbfe8619a9c1cc76c3012c.pdf?_ga=2.107625477.667567004.1564233162-1809408230.1564233162
 #
@@ -16,7 +17,7 @@ teste = grafosPalavra('Arquivos/all_datasets-test_twiter.txt',1)
 teste1 = grafosPalavra('Arquivos/all_datasets-test_twiter.txt',1,True)
 #nltk
 from Auxiliar.aux_NLTK import aux_NLTK
-#func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
+func_NLTK = aux_NLTK('Estamos fazendo o projeto da materia da UFABC de PLN do professor Jesus')
 
 #ppmi
 from Auxiliar.aux_PPMI import aux_PPMI
