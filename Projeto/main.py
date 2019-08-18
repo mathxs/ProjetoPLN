@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Artigo referencia do trabalho de PLN
 #https://pdfs.semanticscholar.org/7867/159013a9c10661fbfe8619a9c1cc76c3012c.pdf?_ga=2.107625477.667567004.1564233162-1809408230.1564233162
 #
@@ -12,6 +13,7 @@ print(sys.executable+"\n")
 
 #O grafico de palavra
 from Auxiliar.grafosPalavra import grafosPalavra
+
 print ("\Sem nltk, Unigrama\n")
 N1_grama = grafosPalavra('Arquivos/data_twiter_brumadinho.txt',1,0.65)
 
