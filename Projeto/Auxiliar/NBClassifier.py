@@ -85,10 +85,10 @@ class NBClassifier:
                 count_wc += self.bigdoc[c].count(w)
 
             for w in self.V:
-                #self.loglikelihood[(w,c)] = math.log( (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  )
-                self.loglikelihood[(w,c)]  = (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  
+                self.loglikelihood[(w,c)] = math.log( (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  )
+                #self.loglikelihood[(w,c)]  = (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  
 
-        print("\n", self.logprior)
+        print("\n",self.logprior)
 
 
     def test_arquivo(self, texto_test):
@@ -97,22 +97,8 @@ class NBClassifier:
         training_test = open(texto_test,'r')
         for line in training_test.readlines():
             quant_linha += 1
-            s = dict([])
-            for c in self.Classes.keys():
-                s[c] = self.logprior[c]
-
-            if self.at_nltk:
-                for w in word_tokenize(line,language='portuguese'):                        
-                    if w in self.V:
-                        #s[c] += self.loglikelihood[(w,c)]
-                        s[c]  *= self.loglikelihood[(w,c)]
-            else:
-                for w in re.findall(regex, line):
-                    if w in self.V:
-                        #s[c] += self.loglikelihood[(w,c)]
-                        s[c]  *= self.loglikelihood[(w,c)]
-
-            quant_posit += int(max(s, key=s.get))
+            resultado = self.test(line)
+            quant_posit += int(resultado)
         print ("Quantidade de linha: {} \t Quantidade de valores 1: {} \n".format(quant_linha, quant_posit))
         #return max(s, key=s.get)
 
@@ -124,13 +110,13 @@ class NBClassifier:
             if self.at_nltk:
                 for w in word_tokenize(testdoc,language='portuguese'):                        
                     if w in self.V:
-                        #s[c] += self.loglikelihood[(w,c)]
-                        s[c]  *= self.loglikelihood[(w,c)]
+                        s[c] += self.loglikelihood[(w,c)]
+                        #s[c]  *= self.loglikelihood[(w,c)]
             else:
                 for w in re.findall(regex, testdoc):
                     if w in self.V:
-                        #s[c] += self.loglikelihood[(w,c)]
-                        s[c]  *= self.loglikelihood[(w,c)]
+                        s[c] += self.loglikelihood[(w,c)]
+                        #s[c]  *= self.loglikelihood[(w,c)]
 
         return max(s, key=s.get)
 
@@ -157,5 +143,22 @@ class NBClassifier:
                 tn += 1
 
         print ("Corretos={}/{}\tAcurácia={}".format(correct, total, correct/float(total) ))
-        print ("Precisão  = {}".format(float(tp)/(tp+fp)))
-        print ("Revocação = {}".format(float(tp)/(tp+fn)))
+        #print ("Precisão  = {}".format(float(tp)/(tp+fp)))
+        #print ("Revocação = {}".format(float(tp)/(tp+fn)))
+
+    def test_arquivo_formal(self, texto_test,n,texto_temp):
+
+        arquivo = open(texto_temp, 'w')
+        
+        quant_linha = 0
+        quant_posit = 0
+        training_test = open(texto_test,'r')
+        for line in training_test.readlines():
+            quant_linha += 1
+            resultado = self.test(line)
+            if int(resultado) == int(n):
+                arquivo.write(line)
+                quant_posit += 1
+        print ("Formal e Informal, Quantidade de linha: {} \t Quantidade de valores {}: {} \n".format(quant_linha,n, quant_posit))
+        arquivo.close()
+        #return max(s, key=s.get)

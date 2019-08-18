@@ -71,8 +71,6 @@ class grafosPalavra:
                 weight = Edges[v]
 
         weight = weight * self.peso
-        if weight < 2:
-            weight = 2
         # criando o grafo direcionado (digraph)
         txtGraph = "\ndigraph{"
         for v in Edges.keys():
