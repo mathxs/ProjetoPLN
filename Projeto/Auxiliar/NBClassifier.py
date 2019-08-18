@@ -24,13 +24,22 @@ class NBClassifier:
     def negate_sequence(self,text):
         text2 = ""
         prefix = ""
-        for w in re.findall(r"[-'a-zA-ZÀ-ÖØ-öø-ÿ]+|[.,;!?]", text):
-            if w in ["not", "didn't", "no", "não"]:
-                prefix = "not_"
-                continue
-            if w in ".,;!?":
-                prefix = ""
-            text2 += " "+prefix+w
+        if self.at_nltk:
+                for w in word_tokenize(text,language='portuguese'):                        
+                    if w in ["not", "didn't", "no", "não"]:
+                        prefix = "not_"
+                        continue
+                    if w in ".,;!?":
+                        prefix = ""
+                    text2 += " "+prefix+w
+        else:
+            for w in re.findall(regex, text):
+                if w in ["not", "didn't", "no", "não"]:
+                    prefix = "not_"
+                    continue
+                if w in ".,;!?":
+                    prefix = ""
+                text2 += " "+prefix+w
 
         return text2
 
@@ -40,9 +49,6 @@ class NBClassifier:
         for line in training_document.readlines():
             if '\t' in line:
                 d, c = tuple(line.strip().split("\t"))
-                if self.at_nltk:
-                    for j in word_tokenize(d,language='portuguese'):                        
-                        d = j
                 self.Data.append((c,d))
             #print (d)
             
@@ -53,9 +59,15 @@ class NBClassifier:
            
             # tratando a negação
             d = self.negate_sequence(d)
-            for w in re.findall(regex, d):
-                self.V.add(w)
-                self.bigdoc[c].append(w)
+            if self.at_nltk:
+                for w in word_tokenize(d,language='portuguese'):                        
+                    self.V.add(w)
+                    self.bigdoc[c].append(w)
+            else:
+                for w in re.findall(regex, d):
+                    self.V.add(w)
+                    self.bigdoc[c].append(w)
+            #print (len(self.V))
 
         print("Total: classes={} documentos={} vocabulario={}".format(len(self.Classes), len(self.Data), len(self.V) ) )
 
@@ -88,10 +100,18 @@ class NBClassifier:
             s = dict([])
             for c in self.Classes.keys():
                 s[c] = self.logprior[c]
+
+            if self.at_nltk:
+                for w in word_tokenize(line,language='portuguese'):                        
+                    if w in self.V:
+                        #s[c] += self.loglikelihood[(w,c)]
+                        s[c]  *= self.loglikelihood[(w,c)]
+            else:
                 for w in re.findall(regex, line):
                     if w in self.V:
                         #s[c] += self.loglikelihood[(w,c)]
                         s[c]  *= self.loglikelihood[(w,c)]
+
             quant_posit += int(max(s, key=s.get))
         print ("Quantidade de linha: {} \t Quantidade de valores 1: {} \n".format(quant_linha, quant_posit))
         #return max(s, key=s.get)
@@ -100,10 +120,17 @@ class NBClassifier:
         s = dict([])
         for c in self.Classes.keys():
             s[c] = self.logprior[c]
-            for w in re.findall(regex, testdoc):
-                if w in self.V:
-                    #s[c] += self.loglikelihood[(w,c)]
-                    s[c]  *= self.loglikelihood[(w,c)]
+
+            if self.at_nltk:
+                for w in word_tokenize(testdoc,language='portuguese'):                        
+                    if w in self.V:
+                        #s[c] += self.loglikelihood[(w,c)]
+                        s[c]  *= self.loglikelihood[(w,c)]
+            else:
+                for w in re.findall(regex, testdoc):
+                    if w in self.V:
+                        #s[c] += self.loglikelihood[(w,c)]
+                        s[c]  *= self.loglikelihood[(w,c)]
 
         return max(s, key=s.get)
 

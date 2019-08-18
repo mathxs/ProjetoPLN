@@ -86,15 +86,15 @@ Total: classes=2 documentos=101 vocabulario=314
 Corretos=99/101	Acurácia=0.9801980198019802
 Precisão  = 0.9821428571428571
 Revocação = 0.9821428571428571
-Quantidade de linha: 101 	 Quantidade de valores 1: 57 
+Quantidade de linha: 101 	 Quantidade de valores 1: 0 
 
 \Com NlTK,  word_tokenize, NBClassifier
 
-Total: classes=2 documentos=101 vocabulario=55
+Total: classes=2 documentos=101 vocabulario=326
 
  {'0': 0.44554455445544555, '1': 0.5544554455445545}
-Corretos=86/101	Acurácia=0.8514851485148515
-Precisão  = 0.7971014492753623
+Corretos=98/101	Acurácia=0.9702970297029703
+Precisão  = 0.9649122807017544
 Revocação = 0.9821428571428571
-Quantidade de linha: 101 	 Quantidade de valores 1: 67 
+Quantidade de linha: 101 	 Quantidade de valores 1: 0 
 
