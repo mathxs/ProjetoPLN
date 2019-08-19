@@ -5,7 +5,7 @@ import re
 from nltk import word_tokenize, pos_tag, ne_chunk
 
 at_nltk_tokens = False
-peso = 0.50
+words_result = set([])
 class grafosPalavra:
 
     def __init__(self,caminho,n_grama,peso,at_nltk=False):
@@ -72,14 +72,20 @@ class grafosPalavra:
 
         weight = weight * self.peso
         # criando o grafo direcionado (digraph)
+        self.words_result = set([])
         txtGraph = "\ndigraph{"
         for v in Edges.keys():
             if Edges[v]>=weight:
+                self.words_result.add(v[0])
+                self.words_result.add(v[1])                
                 txtGraph += '\n "{}" -> "{}"[label="{}"]'. format(v[0], v[1], Edges[v])
         txtGraph += "\n}"
 
-        print(txtGraph)
-        print("Colocar a saída acima no site: http://graphs.grevian.org/graph/")
+        #print(txtGraph)
+        #print("Colocar a saída acima no site: http://graphs.grevian.org/graph/")
         print ( "\nQuantidade de palavras: {}".format(len(Words)) )   
-        print ( "Quantidade de arestas : {} \n".format(len(Edges)) )   
+        print ( "Quantidade de arestas : {} \n".format(len(Edges)) )
+    
+    def resultado(self):
+        return self.words_result; 
 
