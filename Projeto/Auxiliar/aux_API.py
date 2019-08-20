@@ -5,7 +5,7 @@ import json
 import requests
 
 # Informacao base API busca
-api_token = 'AAAAAAAAAAAAAAAAAAAAADJ8%2FQAAAAAAY89JBq12pO0gTaAsPdJqMLLHEz4%3D1ckFxCKMFXLcvGcJDvyXY73whShU01odZntRSNMw8JDaKZPIss'
+api_token = 'access_token'
 api_url_base = 'https://api.twitter.com/1.1/search/'
 
 # Headers info
@@ -26,10 +26,10 @@ response = requests.get(api_url, headers=headers, params=params)
 searchRes = json.loads(response.content.decode('utf-8'))
 
 # Autenticando no conjunto de API do twitter utilizando Tweepy
-# consumer_key = "x5u9rCVgbFHZllSqSAuJgNuTv"
-# consumer_secret = "q6mYHBSROEpQdHaeFayOpp2Nf9Y2MwvIjXWabKo8UOMAUx36vq"
-# key = "1156898520030470144-dnFJuLoY5bk6xGQBwH9behG2QoRUnu"
-# secret = "zDVR3WOKfFWeBR2bFPbM989OGPevyywHGmJRquKg9MnfB"
+# consumer_key = "consum_key"
+# consumer_secret = "consum_secret"
+# key = "key"
+# secret = "secret"
 # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 # auth.set_access_token(key, secret)
 
