@@ -7,7 +7,7 @@ Pessoas perdidas precisam ser procuradas.	1
 Deve haver pessoas que sobreviveram	1
 Cachorros estão ajudando na busca 	1
 Autoridades dizem que irão tomar providencias  	0
-Voluntários podem participar na busca, desde que os bombeiros permitam  	1
+Voluntários podem participar na busca, desde que os bombeiros permitam	1
 Mantimentos estão sendo enviados para os desabrigados 	0
 Casas estão completamente destruidas aqui	1
 Há buracos que podem ter pessoas	1
@@ -73,29 +73,3 @@ Meu Deus, o que é isso?  	0
 Falta de respeito total com a vida	0
 Cães farejadores ajudam nas buscas	1
 Quais são as regiões com mais sobreviventes?	1
-Bolhas de ar podem existir. Vale a pen continuar procurando sobreviventes	1
-Cadê o Crea?	0
-Será que um dia o brasileiro para de sofrer?	0
-Bolsonaro mais atrapalha do que ajuda	0
-Esse é o meu presidente, Bolsonaro ajuda esse povo	0
-Poluição dos rios preocupa especialistas.  	0
-Vamos nos unir para ajudar as vitimas. Todos podem ajudar	1
-Fauna e flora são prejudicadas	0
-Cães ajudam na busca e encontraram corpos  	1
-Foram encontrados alguns sobreviventes	1
-Deus conforte as familias	0
-Chuvas podem atrapalhar buscar	1
-Noite faz buscas serem interrompidas	1
-Luzes artificiais ajudam nas buscas com a chegada da noite	1
-Chuva pode atrapalhar as buscas	1
-Bombeiros continuam trabalhando	1
-Não acredito que isso ainda acontece no Brasil	0
-Tecnologia pode ajudar nas buscas em Brumadinho	1
-Policia continua nas buscar  	1
-Certeza que pessoas podem estar vivas 	1
-Foram encontrados e identidicados 07 corpos 	1
-Familiares estão sem esperança	1
-Familiares contam com apoio da policia	1
-Lama é toxica  	0
-Sobe número de vitimas encontradas.	1
-O que tinha nessa lama?	0

@@ -128,19 +128,21 @@ class NBClassifier:
 
         for line in testing_document.readlines():
             total += 1
-            d, c   = tuple(line.strip().split("\t"))
-            result = self.test(d.lower())
-            #print ("Classe_Verdadeira={} Classe_Identificada={}:\t{}".format(c, result, d))
-            if c==result:
-                correct += 1
-            if c=='1' and result=='1':
-                tp += 1
-            if c=='0' and result=='1':
-                fp += 1
-            if c=='1' and result=='0':
-                fn += 1
-            if c=='0' and result=='0':
-                tn += 1
+            #print(line)
+            if '\t' in line:        
+                d, c   = tuple(line.strip().split("\t"))
+                result = self.test(d.lower())
+                #print ("Classe_Verdadeira={} Classe_Identificada={}:\t{}".format(c, result, d))
+                if c==result:
+                    correct += 1
+                if c=='1' and result=='1':
+                    tp += 1
+                if c=='0' and result=='1':
+                    fp += 1
+                if c=='1' and result=='0':
+                    fn += 1
+                if c=='0' and result=='0':
+                    tn += 1
 
         if int(total) == int(0):
             acuracia = 0
@@ -163,7 +165,7 @@ class NBClassifier:
             if int(resultado) == int(n):
                 arquivo.write(line)
                 quant_posit += 1
-        print ("Formal e Informal, Quantidade de linha: {} \t Quantidade de valores {}: {} \n".format(quant_linha,n, quant_posit))
+        print ("Quantidade de linha: {} \t Quantidade de valores {}: {} \n".format(quant_linha,n, quant_posit))
         arquivo.close()
         #return max(s, key=s.get)
 
