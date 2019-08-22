@@ -14,78 +14,14 @@ Completo:Arquivos/data_twiter_brumadinho.txt
 Sem NlTK, NBClassifier
 	Corretos=48/75	Acurácia=0.64
 Sem nltk, Unigrama
-
-digraph{
- "marca" -> "ativa"[label="6"]
- "ativa" -> "notificações"[label="6"]
- "notificações" -> "instagram"[label="6"]
- "instagram" -> "sempre"[label="6"]
- "sempre" -> "notícias"[label="6"]
- "notícias" -> "novas"[label="6"]
- "novas" -> "atuais"[label="6"]
- "atuais" -> "abraço"[label="6"]
- "corpo" -> "bombeiros"[label="7"]
- "bombeiros" -> "mg"[label="6"]
- "rompimento" -> "barragem"[label="9"]
- "tragédia" -> "brumadinho"[label="6"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-digraph{
- "marca ativa" -> "ativa notificações"[label="6"]
- "ativa notificações" -> "notificações instagram"[label="6"]
- "notificações instagram" -> "instagram sempre"[label="6"]
- "instagram sempre" -> "sempre notícias"[label="6"]
- "sempre notícias" -> "notícias novas"[label="6"]
- "notícias novas" -> "novas atuais"[label="6"]
- "novas atuais" -> "atuais abraço"[label="6"]
- "tenente pedro" -> "pedro aihara"[label="4"]
- "pedro aihara" -> "aihara porta-voz"[label="4"]
- "aihara porta-voz" -> "porta-voz corpo"[label="4"]
- "porta-voz corpo" -> "corpo bombeiros"[label="4"]
- "corpo bombeiros" -> "bombeiros mg"[label="4"]
- "bombeiros mg" -> "mg desmentiu"[label="4"]
- "mg desmentiu" -> "desmentiu informação"[label="4"]
-}
 	Corretos=0/0	Acurácia=0
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=50/75	Acurácia=0.6666666666666666
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "marca" -> "ativa"[label="6"]
- "ativa" -> "notificações"[label="6"]
- "notificações" -> "instagram"[label="6"]
- "instagram" -> "sempre"[label="6"]
- "sempre" -> "notícias"[label="6"]
- "notícias" -> "novas"[label="6"]
- "novas" -> "atuais"[label="6"]
- "atuais" -> "abraço"[label="6"]
- "corpo" -> "bombeiros"[label="7"]
- "bombeiros" -> "mg"[label="6"]
- "rompimento" -> "barragem"[label="9"]
- "tragédia" -> "brumadinho"[label="6"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "marca ativa" -> "ativa notificações"[label="6"]
- "ativa notificações" -> "notificações instagram"[label="6"]
- "notificações instagram" -> "instagram sempre"[label="6"]
- "instagram sempre" -> "sempre notícias"[label="6"]
- "sempre notícias" -> "notícias novas"[label="6"]
- "notícias novas" -> "novas atuais"[label="6"]
- "novas atuais" -> "atuais abraço"[label="6"]
- "tenente pedro" -> "pedro aihara"[label="4"]
- "pedro aihara" -> "aihara porta-voz"[label="4"]
- "aihara porta-voz" -> "porta-voz corpo"[label="4"]
- "porta-voz corpo" -> "corpo bombeiros"[label="4"]
- "corpo bombeiros" -> "bombeiros mg"[label="4"]
- "bombeiros mg" -> "mg desmentiu"[label="4"]
- "mg desmentiu" -> "desmentiu informação"[label="4"]
-}
 	Corretos=0/0	Acurácia=0
 
 ----------------------------------------------------------------------------------
@@ -95,60 +31,14 @@ Formal:Arquivos/data_twiter_brumadinho.txt
 Sem NlTK, NBClassifier
 	Corretos=49/101	Acurácia=0.48514851485148514
 Sem nltk, Unigrama
-
-digraph{
- "falta" -> "respeito"[label="2"]
- "precisam" -> "ser"[label="2"]
- "devem" -> "ser"[label="2"]
- "hoje" -> "gente"[label="2"]
- "ainda" -> "bem"[label="2"]
- "desse" -> "momento"[label="2"]
- "paulo" -> "guedes"[label="2"]
- "dia" -> "economista"[label="2"]
- "cotas" -> "pis"[label="2"]
- "pis" -> "pasep"[label="2"]
- "guerra" -> "infinita"[label="2"]
- "novos" -> "modelos"[label="2"]
- "modelos" -> "devem"[label="2"]
- "iphone" -> "11"[label="3"]
- "11" -> "pro"[label="2"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=0/2	Acurácia=0.0
 Sem nltk, Bigrama
-
-digraph{
- "cotas pis" -> "pis pasep"[label="2"]
- "novos modelos" -> "modelos devem"[label="2"]
- "iphone 11" -> "11 pro"[label="2"]
-}
 	Corretos=0/1	Acurácia=0.0
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=47/98	Acurácia=0.47959183673469385
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "precisam" -> "ser"[label="2"]
- "devem" -> "ser"[label="2"]
- "hoje" -> "gente"[label="2"]
- "desse" -> "momento"[label="2"]
- "paulo" -> "guedes"[label="2"]
- "dia" -> "economista"[label="2"]
- "cotas" -> "pis"[label="2"]
- "pis" -> "pasep"[label="2"]
- "guerra" -> "infinita"[label="2"]
- "novos" -> "modelos"[label="2"]
- "modelos" -> "devem"[label="2"]
- "iphone" -> "11"[label="3"]
- "11" -> "pro"[label="2"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=0/2	Acurácia=0.0
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "cotas pis" -> "pis pasep"[label="2"]
- "novos modelos" -> "modelos devem"[label="2"]
- "iphone 11" -> "11 pro"[label="2"]
-}
 	Corretos=0/1	Acurácia=0.0
 
 ----------------------------------------------------------------------------------
@@ -158,38 +48,15 @@ Informal:Arquivos/data_twiter_brumadinho.txt
 Sem NlTK, NBClassifier
 	Corretos=42/148	Acurácia=0.28378378378378377
 Sem nltk, Unigrama
-
-digraph{
- "desastre" -> "brumadinho"[label="3"]
- "corpos" -> "encontrados"[label="4"]
- "ajudam" -> "buscas"[label="3"]
- "prédio" -> "desabou"[label="3"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-digraph{
- "corpos encontrados" -> "encontrados brumadinho"[label="2"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=44/151	Acurácia=0.2913907284768212
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "falta" -> "respeito"[label="3"]
- "desastre" -> "brumadinho"[label="3"]
- "corpos" -> "encontrados"[label="4"]
- "ajudam" -> "buscas"[label="3"]
- "prédio" -> "desabou"[label="3"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "corpos encontrados" -> "encontrados brumadinho"[label="2"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
@@ -206,31 +73,15 @@ Completo:Arquivos/data_twiter_chapecoense.txt
 Sem NlTK, NBClassifier
 	Corretos=48/75	Acurácia=0.64
 Sem nltk, Unigrama
-
-digraph{
- "jornal" -> "nacional"[label="25"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-digraph{
- "homenagem jornal" -> "jornal nacional"[label="8"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=50/75	Acurácia=0.6666666666666666
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "jornal" -> "nacional"[label="25"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "homenagem jornal" -> "jornal nacional"[label="8"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=1/1	Acurácia=1.0
 
 ----------------------------------------------------------------------------------
 
@@ -239,60 +90,14 @@ Formal:Arquivos/data_twiter_chapecoense.txt
 Sem NlTK, NBClassifier
 	Corretos=49/101	Acurácia=0.48514851485148514
 Sem nltk, Unigrama
-
-digraph{
- "falta" -> "respeito"[label="2"]
- "precisam" -> "ser"[label="2"]
- "devem" -> "ser"[label="2"]
- "hoje" -> "gente"[label="2"]
- "ainda" -> "bem"[label="2"]
- "desse" -> "momento"[label="2"]
- "paulo" -> "guedes"[label="2"]
- "dia" -> "economista"[label="2"]
- "cotas" -> "pis"[label="2"]
- "pis" -> "pasep"[label="2"]
- "guerra" -> "infinita"[label="2"]
- "novos" -> "modelos"[label="2"]
- "modelos" -> "devem"[label="2"]
- "iphone" -> "11"[label="3"]
- "11" -> "pro"[label="2"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=0/2	Acurácia=0.0
 Sem nltk, Bigrama
-
-digraph{
- "cotas pis" -> "pis pasep"[label="2"]
- "novos modelos" -> "modelos devem"[label="2"]
- "iphone 11" -> "11 pro"[label="2"]
-}
 	Corretos=0/1	Acurácia=0.0
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=47/98	Acurácia=0.47959183673469385
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "precisam" -> "ser"[label="2"]
- "devem" -> "ser"[label="2"]
- "hoje" -> "gente"[label="2"]
- "desse" -> "momento"[label="2"]
- "paulo" -> "guedes"[label="2"]
- "dia" -> "economista"[label="2"]
- "cotas" -> "pis"[label="2"]
- "pis" -> "pasep"[label="2"]
- "guerra" -> "infinita"[label="2"]
- "novos" -> "modelos"[label="2"]
- "modelos" -> "devem"[label="2"]
- "iphone" -> "11"[label="3"]
- "11" -> "pro"[label="2"]
-}
-	Corretos=0/0	Acurácia=0
+	Corretos=0/2	Acurácia=0.0
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "cotas pis" -> "pis pasep"[label="2"]
- "novos modelos" -> "modelos devem"[label="2"]
- "iphone 11" -> "11 pro"[label="2"]
-}
 	Corretos=0/1	Acurácia=0.0
 
 ----------------------------------------------------------------------------------
@@ -302,35 +107,12 @@ Informal:Arquivos/data_twiter_chapecoense.txt
 Sem NlTK, NBClassifier
 	Corretos=42/148	Acurácia=0.28378378378378377
 Sem nltk, Unigrama
-
-digraph{
- "desastre" -> "brumadinho"[label="3"]
- "corpos" -> "encontrados"[label="4"]
- "ajudam" -> "buscas"[label="3"]
- "prédio" -> "desabou"[label="3"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-digraph{
- "corpos encontrados" -> "encontrados brumadinho"[label="2"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, NBClassifier
 	Corretos=44/151	Acurácia=0.2913907284768212
 Com NlTK,  word_tokenize, Unigrama
-
-digraph{
- "falta" -> "respeito"[label="3"]
- "desastre" -> "brumadinho"[label="3"]
- "corpos" -> "encontrados"[label="4"]
- "ajudam" -> "buscas"[label="3"]
- "prédio" -> "desabou"[label="3"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
-
-digraph{
- "corpos encontrados" -> "encontrados brumadinho"[label="2"]
-}
-	Corretos=3/3	Acurácia=1.0
+	Corretos=101/183	Acurácia=0.5519125683060109
