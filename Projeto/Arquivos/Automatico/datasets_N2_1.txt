@@ -59,6 +59,7 @@ Bolhas de ar podem existir. Vale a pen continuar procurando sobreviventes	1
 Vamos nos unir para ajudar as vitimas. Todos podem ajudar	1
 Cães ajudam na busca e encontraram corpos  	0
 Foram encontrados alguns sobreviventes	0
+Deus conforte as familias	1
 Chuvas podem atrapalhar buscar	0
 Noite faz buscas serem interrompidas	0
 Luzes artificiais ajudam nas buscas com a chegada da noite	0

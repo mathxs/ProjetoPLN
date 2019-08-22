@@ -71,6 +71,7 @@ class grafosPalavra:
                 weight = Edges[v]
 
         weight = weight * self.peso
+        weight = 2
         # criando o grafo direcionado (digraph)
         self.words_result = set([])
         txtGraph = "\ndigraph{"
@@ -83,8 +84,8 @@ class grafosPalavra:
 
         #print(txtGraph)
         #print("Colocar a saída acima no site: http://graphs.grevian.org/graph/")
-        print ( "\nQuantidade de palavras: {}".format(len(Words)) )   
-        print ( "Quantidade de arestas : {} \n".format(len(Edges)) )
+        #print ( "\nQuantidade de palavras: {}".format(len(Words)) )   
+        #print ( "Quantidade de arestas : {} \n".format(len(Edges)) )
     
     def resultado(self):
         return self.words_result; 

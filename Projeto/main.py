@@ -31,7 +31,7 @@ from Auxiliar.grafosPalavra import grafosPalavra
 from Auxiliar.NBClassifier import NBClassifier
 
 #naiveBayes
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nCompleto:" + arquivo_twiter + "\n")
 
 print ("Sem NlTK, NBClassifier")
@@ -73,8 +73,11 @@ N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 #N6_grama = grafosPalavra(arquivo_twiter,3,n,True)
 #N2_NBC.test_grafh(N6_grama.resultado(),arquivo_train_desastre)
 
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nFormal:" + arquivo_twiter + "\n")
+
+print ("Sem NlTK, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N1_0.txt'
 N1_NBC.test_arquivo_formal(arquivo_train_formal,0,arquivo_temp)
 N1_NBC.test_batch(arquivo_temp)
@@ -91,6 +94,8 @@ N1_NBC.test_grafh(N3_grama.resultado(),arquivo_train_desastre)
 #print ("\Sem nltk, Trigrama\n")
 #N5_grama = grafosPalavra(arquivo_temp,3,n)
 #N1_NBC.test_grafh(N5_grama.resultado(),arquivo_train_desastre)
+
+print ("Com NlTK,  word_tokenize, NBClassifier")
 
 arquivo_temp = 'Arquivos/Automatico/datasets_N2_0.txt'
 N2_NBC.test_arquivo_formal(arquivo_train_formal,0,arquivo_temp)
@@ -109,8 +114,11 @@ N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 #N6_grama = grafosPalavra(arquivo_temp,3,n,True)
 #N2_NBC.test_grafh(N6_grama.resultado(),arquivo_train_desastre)
 
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nInformal:" + arquivo_twiter + "\n")
+
+print ("Sem NlTK, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N1_1.txt'
 N1_NBC.test_arquivo_formal(arquivo_train_formal,1,arquivo_temp)
 N1_NBC.test_batch(arquivo_temp)
@@ -128,6 +136,8 @@ N1_NBC.test_grafh(N3_grama.resultado(),arquivo_train_desastre)
 #N5_grama = grafosPalavra(arquivo_temp,3,n)
 #N1_NBC.test_grafh(N5_grama.resultado(),arquivo_train_desastre)
 
+print ("Com NlTK,  word_tokenize, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N2_1.txt'
 N2_NBC.test_arquivo_formal(arquivo_train_formal,1,arquivo_temp)
 N2_NBC.test_batch(arquivo_temp)
@@ -137,7 +147,7 @@ print ("Com NlTK,  word_tokenize, Unigrama")
 N2_grama = grafosPalavra(arquivo_temp,1,n,True)
 N2_NBC.test_grafh(N2_grama.resultado(),arquivo_train_desastre)
 
-print ("\Com NlTK,  word_tokenize, Bigrama")
+print ("Com NlTK,  word_tokenize, Bigrama")
 N4_grama = grafosPalavra(arquivo_temp,2,n,True)
 N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 
@@ -147,12 +157,12 @@ N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 
 
 #Processamento 2º
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("----------------------------------------------------------------------------------")
 print ("----------------------------------------------------------------------------------")
 
 #arquivo twiter
-arquivo_twiter = 'Arquivos/data_twiter_predio.txt'
+arquivo_twiter = 'Arquivos/data_twiter_chapecoense.txt'
 #porcentual dos n_grama
 n = 0.65
 
@@ -163,11 +173,10 @@ from Auxiliar.grafosPalavra import grafosPalavra
 from Auxiliar.NBClassifier import NBClassifier
 
 #naiveBayes
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nCompleto:" + arquivo_twiter + "\n")
 
 print ("Sem NlTK, NBClassifier")
-
 N1_NBC = NBClassifier(arquivo_train_desastre)
 N1_NBC.train()
 N1_NBC.test_batch(arquivo_batch)
@@ -205,8 +214,11 @@ N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 #N6_grama = grafosPalavra(arquivo_twiter,3,n,True)
 #N2_NBC.test_grafh(N6_grama.resultado(),arquivo_train_desastre)
 
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nFormal:" + arquivo_twiter + "\n")
+
+print ("Sem NlTK, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N1_0.txt'
 N1_NBC.test_arquivo_formal(arquivo_train_formal,0,arquivo_temp)
 N1_NBC.test_batch(arquivo_temp)
@@ -223,6 +235,8 @@ N1_NBC.test_grafh(N3_grama.resultado(),arquivo_train_desastre)
 #print ("\Sem nltk, Trigrama\n")
 #N5_grama = grafosPalavra(arquivo_temp,3,n)
 #N1_NBC.test_grafh(N5_grama.resultado(),arquivo_train_desastre)
+
+print ("Com NlTK,  word_tokenize, NBClassifier")
 
 arquivo_temp = 'Arquivos/Automatico/datasets_N2_0.txt'
 N2_NBC.test_arquivo_formal(arquivo_train_formal,0,arquivo_temp)
@@ -241,8 +255,11 @@ N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 #N6_grama = grafosPalavra(arquivo_temp,3,n,True)
 #N2_NBC.test_grafh(N6_grama.resultado(),arquivo_train_desastre)
 
-print ("----------------------------------------------------------------------------------")
+print ("\n----------------------------------------------------------------------------------")
 print ("\nInformal:" + arquivo_twiter + "\n")
+
+print ("Sem NlTK, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N1_1.txt'
 N1_NBC.test_arquivo_formal(arquivo_train_formal,1,arquivo_temp)
 N1_NBC.test_batch(arquivo_temp)
@@ -260,6 +277,8 @@ N1_NBC.test_grafh(N3_grama.resultado(),arquivo_train_desastre)
 #N5_grama = grafosPalavra(arquivo_temp,3,n)
 #N1_NBC.test_grafh(N5_grama.resultado(),arquivo_train_desastre)
 
+print ("Com NlTK,  word_tokenize, NBClassifier")
+
 arquivo_temp = 'Arquivos/Automatico/datasets_N2_1.txt'
 N2_NBC.test_arquivo_formal(arquivo_train_formal,1,arquivo_temp)
 N2_NBC.test_batch(arquivo_temp)
@@ -269,7 +288,7 @@ print ("Com NlTK,  word_tokenize, Unigrama")
 N2_grama = grafosPalavra(arquivo_temp,1,n,True)
 N2_NBC.test_grafh(N2_grama.resultado(),arquivo_train_desastre)
 
-print ("\Com NlTK,  word_tokenize, Bigrama")
+print ("Com NlTK,  word_tokenize, Bigrama")
 N4_grama = grafosPalavra(arquivo_temp,2,n,True)
 N2_NBC.test_grafh(N4_grama.resultado(),arquivo_train_desastre)
 

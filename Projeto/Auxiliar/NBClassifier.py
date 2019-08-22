@@ -69,7 +69,7 @@ class NBClassifier:
                     self.bigdoc[c].append(w)
             #print (len(self.V))
 
-        print("Total: classes={} documentos={} vocabulario={}".format(len(self.Classes), len(self.Data), len(self.V) ) )
+        #print("Total: classes={} documentos={} vocabulario={}".format(len(self.Classes), len(self.Data), len(self.V) ) )
 
 
     def train(self):
@@ -88,7 +88,7 @@ class NBClassifier:
                 self.loglikelihood[(w,c)] = math.log( (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  )
                 #self.loglikelihood[(w,c)]  = (self.bigdoc[c].count(w) + 1) / (count_wc + len(self.V) )  
 
-        print("\n",self.logprior)
+        #print("\n",self.logprior)
 
 
     def test_arquivo(self, texto_test):
@@ -99,7 +99,7 @@ class NBClassifier:
             quant_linha += 1
             resultado = self.test(line)
             quant_posit += int(resultado)
-        print ("Quantidade de linha: {} \t Quantidade de valores 1: {} \n".format(quant_linha, quant_posit))
+        #print ("Quantidade de linha: {} \t Quantidade de valores 1: {} \n".format(quant_linha, quant_posit))
         #return max(s, key=s.get)
 
     def test(self, testdoc):
@@ -148,7 +148,7 @@ class NBClassifier:
             acuracia = 0
         else:
             acuracia = correct/float(total)
-        print ("Corretos={}/{}\tAcurácia={}".format(correct, total, acuracia ))
+        print ("\tCorretos={}/{}\tAcurácia={}".format(correct, total, acuracia ))
         #print ("Precisão  = {}".format(float(tp)/(tp+fp)))
         #print ("Revocação = {}".format(float(tp)/(tp+fn)))
 
@@ -165,7 +165,7 @@ class NBClassifier:
             if int(resultado) == int(n):
                 arquivo.write(line)
                 quant_posit += 1
-        print ("Quantidade de linha: {} \t Quantidade de valores {}: {} \n".format(quant_linha,n, quant_posit))
+        #print ("Quantidade de linha: {} \t Quantidade de valores {}: {} \n".format(quant_linha,n, quant_posit))
         arquivo.close()
         #return max(s, key=s.get)
 
@@ -175,25 +175,35 @@ class NBClassifier:
         total   = 0
 
         for line in testing_grafh:
-            for linha in testing_document.readlines():
-                d, c   = tuple(linha.strip().split("\t"))
-                teste_linha = False
-                #print ("Classe_Verdadeira={} Classe_Identificada={}:\t{}".format(c, result, d))
-                if self.at_nltk:
-                    for w in word_tokenize(d,language='portuguese'):                        
-                        if line in w:
-                            teste_linha = True
-                else:
-                    for w in re.findall(regex, d):
-                        if w in self.V:
-                            teste_linha = True
-                if teste_linha:
-                    total += 1
+            if self.at_nltk:
+                vetorPalavra = word_tokenize(line, language='portuguese')
+            else:
+                vetorPalavra = re.findall(regex, line)
+            for palavra in vetorPalavra:
+                for linha in testing_document.readlines():
+                    d, c   = tuple(linha.strip().split("\t"))
                     teste_linha = False
-                    if int(c) == int(1):
-                        correct += 1
+                    #print ("Classe_Verdadeira={} Classe_Identificada={}:\t{}".format(c, result, d))
+                    if self.at_nltk:
+                        for w in word_tokenize(d,language='portuguese'):
+                            #print(palavra + w)                     
+                            if palavra.lower() in w.lower():
+                                teste_linha = True
+                            if palavra.lower() in self.V:
+                                teste_linha = True
+                    else:
+                        for w in re.findall(regex, d):
+                            if palavra.lower() in w.lower():
+                                teste_linha = True
+                            if palavra.lower() in self.V:
+                                teste_linha = True
+                    if teste_linha:
+                        total += 1                                                
+                        teste_linha = False
+                        if int(c) == int(1):
+                            correct += 1
         if int(total) == int(0):
             acuracia = 0
         else:
             acuracia = correct/float(total)
-        print ("Corretos={}/{}\tAcurácia={}".format(correct, total, acuracia ))
+        print ("\tCorretos={}/{}\tAcurácia={}".format(correct, total, acuracia ))

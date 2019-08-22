@@ -6,124 +6,58 @@
 Pessoal é 1 e Objetivo é 0
 Desastre é 1 e Não Desastre é 0
 
+
 ----------------------------------------------------------------------------------
 
 Completo:Arquivos/data_twiter_brumadinho.txt
 
 Sem NlTK, NBClassifier
-Total: classes=2 documentos=175 vocabulario=1403
-
- {'1': 0.5314285714285715, '0': 0.4685714285714286}
-Corretos=48/75	Acurácia=0.64
-Quantidade de linha: 324 	 Quantidade de valores 1: 212 
-
+	Corretos=48/75	Acurácia=0.64
 Sem nltk, Unigrama
-
-Quantidade de palavras: 3067
-Quantidade de arestas : 2702 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=0/0	Acurácia=0
 Sem nltk, Bigrama
-
-Quantidade de palavras: 3068
-Quantidade de arestas : 2813 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=0/0	Acurácia=0
 Com NlTK,  word_tokenize, NBClassifier
-Total: classes=2 documentos=175 vocabulario=1546
-
- {'1': 0.5314285714285715, '0': 0.4685714285714286}
-Corretos=51/75	Acurácia=0.68
-Quantidade de linha: 324 	 Quantidade de valores 1: 228 
-
+	Corretos=50/75	Acurácia=0.6666666666666666
 Com NlTK,  word_tokenize, Unigrama
-
-Quantidade de palavras: 3067
-Quantidade de arestas : 2702 
-
-Corretos=0/1	Acurácia=0.0
+	Corretos=0/0	Acurácia=0
 Com NlTK,  word_tokenize, Bigrama
+	Corretos=0/0	Acurácia=0
 
-Quantidade de palavras: 3068
-Quantidade de arestas : 2813 
-
-Corretos=0/0	Acurácia=0
 ----------------------------------------------------------------------------------
 
 Formal:Arquivos/data_twiter_brumadinho.txt
 
-Quantidade de linha: 249 	 Quantidade de valores 0: 101 
-
-Corretos=49/101	Acurácia=0.48514851485148514
-Quantidade de linha: 101 	 Quantidade de valores 1: 0 
-
+Sem NlTK, NBClassifier
+	Corretos=49/101	Acurácia=0.48514851485148514
 Sem nltk, Unigrama
-
-Quantidade de palavras: 800
-Quantidade de arestas : 783 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-Quantidade de palavras: 801
-Quantidade de arestas : 797 
-
-Corretos=93/175	Acurácia=0.5314285714285715
-Quantidade de linha: 249 	 Quantidade de valores 0: 99 
-
-Corretos=48/99	Acurácia=0.48484848484848486
-Quantidade de linha: 99 	 Quantidade de valores 1: 0 
-
+	Corretos=1/2	Acurácia=0.5
+Com NlTK,  word_tokenize, NBClassifier
+	Corretos=47/98	Acurácia=0.47959183673469385
 Com NlTK,  word_tokenize, Unigrama
-
-Quantidade de palavras: 803
-Quantidade de arestas : 788 
-
-Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
+	Corretos=1/2	Acurácia=0.5
 
-Quantidade de palavras: 804
-Quantidade de arestas : 800 
-
-Corretos=0/0	Acurácia=0
 ----------------------------------------------------------------------------------
 
 Informal:Arquivos/data_twiter_brumadinho.txt
 
-Quantidade de linha: 249 	 Quantidade de valores 1: 148 
-
-Corretos=42/148	Acurácia=0.28378378378378377
-Quantidade de linha: 148 	 Quantidade de valores 1: 148 
-
+Sem NlTK, NBClassifier
+	Corretos=42/148	Acurácia=0.28378378378378377
 Sem nltk, Unigrama
-
-Quantidade de palavras: 1272
-Quantidade de arestas : 1239 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-Quantidade de palavras: 1273
-Quantidade de arestas : 1271 
-
-Corretos=93/175	Acurácia=0.5314285714285715
-Quantidade de linha: 249 	 Quantidade de valores 1: 150 
-
-Corretos=44/150	Acurácia=0.29333333333333333
-Quantidade de linha: 150 	 Quantidade de valores 1: 150 
-
+	Corretos=101/183	Acurácia=0.5519125683060109
+Com NlTK,  word_tokenize, NBClassifier
+	Corretos=44/151	Acurácia=0.2913907284768212
 Com NlTK,  word_tokenize, Unigrama
+	Corretos=101/183	Acurácia=0.5519125683060109
+Com NlTK,  word_tokenize, Bigrama
+	Corretos=101/183	Acurácia=0.5519125683060109
 
-Quantidade de palavras: 1269
-Quantidade de arestas : 1236 
-
-Corretos=2/2	Acurácia=1.0
-\Com NlTK,  word_tokenize, Bigrama
-
-Quantidade de palavras: 1270
-Quantidade de arestas : 1268 
-
-Corretos=0/0	Acurácia=0
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
@@ -131,121 +65,54 @@ Corretos=0/0	Acurácia=0
 Pessoal é 1 e Objetivo é 0
 Desastre é 1 e Não Desastre é 0
 
+
 ----------------------------------------------------------------------------------
 
-Completo:Arquivos/data_twiter_predio.txt
+Completo:Arquivos/data_twiter_chapecoense.txt
 
 Sem NlTK, NBClassifier
-Total: classes=2 documentos=175 vocabulario=1403
-
- {'1': 0.5314285714285715, '0': 0.4685714285714286}
-Corretos=48/75	Acurácia=0.64
-Quantidade de linha: 324 	 Quantidade de valores 1: 212 
-
+	Corretos=48/75	Acurácia=0.64
 Sem nltk, Unigrama
-
-Quantidade de palavras: 3067
-Quantidade de arestas : 2702 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=0/0	Acurácia=0
 Sem nltk, Bigrama
-
-Quantidade de palavras: 3068
-Quantidade de arestas : 2813 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=3/5	Acurácia=0.6
 Com NlTK,  word_tokenize, NBClassifier
-Total: classes=2 documentos=175 vocabulario=1546
-
- {'1': 0.5314285714285715, '0': 0.4685714285714286}
-Corretos=51/75	Acurácia=0.68
-Quantidade de linha: 324 	 Quantidade de valores 1: 228 
-
+	Corretos=50/75	Acurácia=0.6666666666666666
 Com NlTK,  word_tokenize, Unigrama
-
-Quantidade de palavras: 3067
-Quantidade de arestas : 2702 
-
-Corretos=0/1	Acurácia=0.0
+	Corretos=0/0	Acurácia=0
 Com NlTK,  word_tokenize, Bigrama
+	Corretos=3/5	Acurácia=0.6
 
-Quantidade de palavras: 3068
-Quantidade de arestas : 2813 
-
-Corretos=0/0	Acurácia=0
 ----------------------------------------------------------------------------------
 
-Formal:Arquivos/data_twiter_predio.txt
+Formal:Arquivos/data_twiter_chapecoense.txt
 
-Quantidade de linha: 249 	 Quantidade de valores 0: 101 
-
-Corretos=49/101	Acurácia=0.48514851485148514
-Quantidade de linha: 101 	 Quantidade de valores 1: 0 
-
+Sem NlTK, NBClassifier
+	Corretos=49/101	Acurácia=0.48514851485148514
 Sem nltk, Unigrama
-
-Quantidade de palavras: 800
-Quantidade de arestas : 783 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-Quantidade de palavras: 801
-Quantidade de arestas : 797 
-
-Corretos=93/175	Acurácia=0.5314285714285715
-Quantidade de linha: 249 	 Quantidade de valores 0: 99 
-
-Corretos=48/99	Acurácia=0.48484848484848486
-Quantidade de linha: 99 	 Quantidade de valores 1: 0 
-
+	Corretos=1/2	Acurácia=0.5
+Com NlTK,  word_tokenize, NBClassifier
+	Corretos=47/98	Acurácia=0.47959183673469385
 Com NlTK,  word_tokenize, Unigrama
-
-Quantidade de palavras: 803
-Quantidade de arestas : 788 
-
-Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
 Com NlTK,  word_tokenize, Bigrama
+	Corretos=1/2	Acurácia=0.5
 
-Quantidade de palavras: 804
-Quantidade de arestas : 800 
-
-Corretos=0/0	Acurácia=0
 ----------------------------------------------------------------------------------
 
-Informal:Arquivos/data_twiter_predio.txt
+Informal:Arquivos/data_twiter_chapecoense.txt
 
-Quantidade de linha: 249 	 Quantidade de valores 1: 148 
-
-Corretos=42/148	Acurácia=0.28378378378378377
-Quantidade de linha: 148 	 Quantidade de valores 1: 148 
-
+Sem NlTK, NBClassifier
+	Corretos=42/148	Acurácia=0.28378378378378377
 Sem nltk, Unigrama
-
-Quantidade de palavras: 1272
-Quantidade de arestas : 1239 
-
-Corretos=93/175	Acurácia=0.5314285714285715
+	Corretos=101/183	Acurácia=0.5519125683060109
 Sem nltk, Bigrama
-
-Quantidade de palavras: 1273
-Quantidade de arestas : 1271 
-
-Corretos=93/175	Acurácia=0.5314285714285715
-Quantidade de linha: 249 	 Quantidade de valores 1: 150 
-
-Corretos=44/150	Acurácia=0.29333333333333333
-Quantidade de linha: 150 	 Quantidade de valores 1: 150 
-
+	Corretos=101/183	Acurácia=0.5519125683060109
+Com NlTK,  word_tokenize, NBClassifier
+	Corretos=44/151	Acurácia=0.2913907284768212
 Com NlTK,  word_tokenize, Unigrama
-
-Quantidade de palavras: 1269
-Quantidade de arestas : 1236 
-
-Corretos=2/2	Acurácia=1.0
-\Com NlTK,  word_tokenize, Bigrama
-
-Quantidade de palavras: 1270
-Quantidade de arestas : 1268 
-
-Corretos=0/0	Acurácia=0
+	Corretos=101/183	Acurácia=0.5519125683060109
+Com NlTK,  word_tokenize, Bigrama
+	Corretos=101/183	Acurácia=0.5519125683060109
